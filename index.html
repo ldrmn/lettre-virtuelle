@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lettre pour toi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .envelope {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background: url('envelope-closed.png') no-repeat center/cover;
+      cursor: pointer;
+    }
+    .card {
+      display: none;
+      width: 300px;
+      height: 200px;
+      background: url('card-open.png') no-repeat center/cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope" onclick="openCard()">
+    <div class="card"></div>
+  </div>
+
+  <script>
+    function openCard() {
+      const envelope = document.querySelector('.envelope');
+      const card = document.querySelector('.card');
+      envelope.style.background = 'none';
+      card.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
